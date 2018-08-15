@@ -53,6 +53,7 @@ public class EndPointsAsyncTask extends AsyncTask<Pair<Context,String>,Void,Stri
     protected void onPostExecute(String s) {
         Intent jokeIntent = new Intent(mContext, DisplayJokeActivity.class);
         jokeIntent.putExtra(JOKE_EXTRA, JokeJavaLibrary.tellRandomJoke());
+        jokeIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         mContext.startActivity(jokeIntent);
     }
 

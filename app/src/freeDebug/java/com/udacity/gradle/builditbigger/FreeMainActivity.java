@@ -1,29 +1,32 @@
 package com.udacity.gradle.builditbigger;
 
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
+public class FreeMainActivity extends AppCompatActivity {
 
-public class MainActivity extends AppCompatActivity {
     Button joke;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.fragment_free_main);
 
-        joke=(Button)findViewById(R.id.jokebutton);
+        joke=(Button)findViewById(R.id.free_tell_joke);
 
         joke.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tellJoke(v);
+
+                Intent adsIntent =new Intent(getApplicationContext(),AdActivity.class);
+                startActivity(adsIntent);
+
+
             }
         });
     }
@@ -54,6 +57,4 @@ public class MainActivity extends AppCompatActivity {
     public void tellJoke(View view) {
         new EndPointsAsyncTask(getApplicationContext()).execute();
     }
-
-
 }
