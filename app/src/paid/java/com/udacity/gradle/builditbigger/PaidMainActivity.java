@@ -1,6 +1,6 @@
 package com.udacity.gradle.builditbigger;
 
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -9,24 +9,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import static android.widget.Toast.LENGTH_LONG;
 
-public class MainActivity extends AppCompatActivity {
-    Button joke;
+public class PaidMainActivity extends AppCompatActivity {
+    Button paidJoke;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.layout_fragment_paid);
 
-        joke=(Button)findViewById(R.id.jokebutton);
+        paidJoke = (Button) findViewById(R.id.paid_tell_joke);
 
-        joke.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tellJoke(v);
-            }
-        });
     }
+
 
 
     @Override
@@ -54,6 +50,4 @@ public class MainActivity extends AppCompatActivity {
     public void tellJoke(View view) {
         new EndPointsAsyncTask(getApplicationContext()).execute();
     }
-
-
 }

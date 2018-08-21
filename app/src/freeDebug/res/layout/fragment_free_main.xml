@@ -13,6 +13,18 @@
         android:layout_marginTop="230dp"
         android:layout_marginLeft="100dp"/>
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/ads_free"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adUnitId="@string/banner_ad_unit_id"
+        ads:adSize="BANNER"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="18dp">
+
+    </com.google.android.gms.ads.AdView>
+
 
 
 </RelativeLayout>

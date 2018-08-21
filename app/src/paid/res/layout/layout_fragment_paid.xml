@@ -2,11 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
     <Button
-        android:id="@+id/free_tell_joke"
+        android:id="@+id/paid_tell_joke"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Want a Joke? Click me!"
         android:layout_marginTop="230dp"
+        android:onClick="tellJoke"
         android:layout_marginLeft="100dp"/>
 
 
